@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "target-health-hud",
+	"version": "${version}",
+	"name": "Target Health HUD",
+	"description": "Displays the health of targeted mobs and players above their heads. Choose between Minecraft-style hearts and numeric health, with customizable settings through Mod Menu.",
+	"authors": [
+		"gvx_lcsz."
+	],
+	"contact": {	
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/target-health-hud/icon.png",
+	"environment": "*",
+	
+	
+	"entrypoints": {
+	"client": [
+		"com.example.targethealthhud.client.TargetHealthHUDClient"
+	],
+	"modmenu": [
+		"com.example.targethealthhud.client.TargetHealthHUDModMenu"
+	]
+	},
+	"mixins": [
+		"target-health-hud.mixins.json",
+		{
+			"config": "target-health-hud.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
